@@ -1,0 +1,38 @@
+{% if not showPig %}
+	<form action="" method="post">
+	{{ form.as_p }}
+	<input type="submit" value="Submit" />
+	</form>
+	{% if bad_pass %}
+		Bad Password!
+	{% endif %}
+	{% if labsDone %}
+		Labs Done: {{ labsDone }}
+	{% endif %}
+
+	{% if allList %}
+		<table>
+		{% for s in allList %}
+			<tr><td>{{s.name}}</td><td>{{s.labcos}}</td></tr>
+		{% endfor %}
+		<table>
+	{% endif %}
+{% else %}
+	               _______       ....--------------,,,,,
+             ___,---'   ~~~<.-----'                       ''\
+          _/'           `--'                                  \
+ __--x_x-'  .~      `---'                                      `,
+| ,,        \'                                                  |
+ \                                                              |   ,---,
+  \   \  ,                                                      `\ ( /-\ \
+   `~~ ~~ --__                                                   |`\_\_/ /
+     `` \_                                                       |`---,-'
+           -._                                             `    /    \ \
+              `-.___/--.             |            /         |  /      `\`-_
+                        `|           |           /          | /         ````
+                        /|           |          |           |'
+                       / |          ,'`---.___ .'           /
+                     /  /          /           |           /
+                    /   |         /            /          /
+                   ```-',________'            `,__________'
+{% endif %}
